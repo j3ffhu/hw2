@@ -30,4 +30,13 @@ public class Untagged implements IXML {
 		return content.first().renderAsXmlString() + content.rest().first().renderAsXmlString();
 	}
 
+	@Override
+	public boolean hasTag(String name) {
+		if (content.first().hasTag(name)) {
+			return true;
+
+		} else
+			return content.rest().first().hasTag(name);
+	}
+
 }

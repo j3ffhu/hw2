@@ -10,5 +10,13 @@ public class Tag {
 		
 		return atts.first().renderAsString() + " " + atts.rest().first().renderAsString() ;
 	}
-
+	
+	public boolean hasAttribute(String name) {
+		if (atts.first().name.equals(name))
+			return true;
+		else 
+			return	atts.rest().first().name.equals(name);
+		
+	}
+	
 }

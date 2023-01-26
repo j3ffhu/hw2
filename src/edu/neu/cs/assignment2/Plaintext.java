@@ -3,6 +3,10 @@ package edu.neu.cs.assignment2;
 public class Plaintext implements IXML {
 
 	String txt;
+	
+	public Plaintext(String txt) {
+		this.txt = txt;
+	}
 
 	@Override
 	public int contentLength() {
@@ -22,6 +26,11 @@ public class Plaintext implements IXML {
 	@Override
 	public String renderAsXmlString() {
 		return null;
+	}
+
+	@Override
+	public boolean hasTag(String name) {
+		return false;
 	}
 
 }

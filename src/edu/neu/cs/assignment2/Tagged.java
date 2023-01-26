@@ -17,6 +17,19 @@ public class Tagged implements IXML {
 	@Override
 	public boolean hasAttribute(String name) {
 
+		if (tag.hasAttribute(name)) {
+			return true;
+		} else
+		if (content.first().hasAttribute(name)) {
+			return true;
+
+		} else
+			return content.rest().first().hasAttribute(name);
+	}
+		
+	@Override
+	public boolean hasTag(String name) {
+
 		if (tag.name.equals(name)) {
 			return true;
 		} else if (content.first().hasAttribute(name)) {

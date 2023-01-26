@@ -9,6 +9,11 @@ public interface IXML {
 	String renderAsXmlString();
 
 	boolean hasAttribute(String name);
+	
+	boolean hasTag(String name);
+	
+	
+	 
 }
 
 //;; An XML is one of:
