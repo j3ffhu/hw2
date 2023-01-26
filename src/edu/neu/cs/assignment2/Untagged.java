@@ -17,11 +17,13 @@ public class Untagged implements IXML {
 	@Override
 	public boolean hasAttribute(String name) {
 
-		if (content.first().hasAttribute(name)) {
+		if (content.first() !=null && content.first().hasAttribute(name)) {
 			return true;
 
-		} else
+		} else   if (content.rest() != null)
 			return content.rest().first().hasAttribute(name);
+		else 
+			return false;
 	}
 
 	@Override
