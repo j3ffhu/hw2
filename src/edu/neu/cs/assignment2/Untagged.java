@@ -4,6 +4,10 @@ package edu.neu.cs.assignment2;
 public class Untagged implements IXML {
 
 	ILoXML content;
+	
+	public Untagged(  ILoXML content  ) {
+		this.content = content;
+	}
 
 	@Override
 	public int contentLength() {

@@ -6,9 +6,12 @@ public class Tagged implements IXML {
 	Tag tag;
 	ILoXML content;
 
-//	IXML first();
-//	ILoXML rest();
-
+ 
+	public Tagged(Tag tag, ILoXML content  ) {
+		this.tag = tag;
+		this.content = content;
+	}
+	
 	@Override
 	public int contentLength() {
 		return content.first().contentLength() + content.rest().first().contentLength();
