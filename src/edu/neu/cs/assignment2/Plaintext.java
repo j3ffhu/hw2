@@ -1,7 +1,7 @@
 package edu.neu.cs.assignment2;
 
-public class Plaintext implements IXML{
-	
+public class Plaintext implements IXML {
+
 	String txt;
 
 	@Override
@@ -16,7 +16,7 @@ public class Plaintext implements IXML{
 
 	@Override
 	public String renderAsString() {
- 		return txt;
+		return txt;
 	}
 
 	@Override

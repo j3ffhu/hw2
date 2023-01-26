@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 // nonempty list of att
-public class ConsLoAtt  implements ILoAtt {
-	
+public class ConsLoAtt implements ILoAtt {
+
 	Att first;
 	ILoAtt rest;
 
@@ -19,5 +19,4 @@ public class ConsLoAtt  implements ILoAtt {
 		return rest;
 	}
 
- 
 }

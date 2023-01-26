@@ -1,12 +1,9 @@
 
 package edu.neu.cs.assignment2;
 
+public class Untagged implements IXML {
 
-
-public class Untagged implements IXML  {
-    
 	ILoXML content;
-	
 
 	@Override
 	public int contentLength() {
@@ -16,7 +13,7 @@ public class Untagged implements IXML  {
 	@Override
 	public boolean hasAttribute(String name) {
 
-      if (content.first().hasAttribute(name)) {
+		if (content.first().hasAttribute(name)) {
 			return true;
 
 		} else

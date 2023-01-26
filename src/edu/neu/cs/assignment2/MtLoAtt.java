@@ -15,5 +15,4 @@ public class MtLoAtt implements ILoAtt {
 		return null;
 	}
 
- 
 }

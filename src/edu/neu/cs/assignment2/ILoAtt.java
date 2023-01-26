@@ -5,7 +5,8 @@ import java.util.List;
 // inteface list of Att
 public interface ILoAtt {
 
-	Att  first();
-	ILoAtt  rest();
-    
+	Att first();
+
+	ILoAtt rest();
+
 }

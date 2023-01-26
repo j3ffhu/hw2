@@ -1,15 +1,14 @@
 package edu.neu.cs.assignment2;
 
 public interface IXML {
-	
-	int contentLength() ;
-		
-    // renderAsString
-    String renderAsString();
 
-    // renderAsXmlString
-    String renderAsXmlString();
+	int contentLength();
 
+	// renderAsString
+	String renderAsString();
+
+	// renderAsXmlString
+	String renderAsXmlString();
 
 	boolean hasAttribute(String name);
 }
