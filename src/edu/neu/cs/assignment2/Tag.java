@@ -3,7 +3,7 @@ package edu.neu.cs.assignment2;
 
 public class Tag {
 
-	Tag name;
+	String name;
 	ILoAtt atts;
 	
 	public String  renderAttsAsString() {	
