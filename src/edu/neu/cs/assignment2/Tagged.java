@@ -22,24 +22,30 @@ public class Tagged implements IXML {
 
 		if (tag.hasAttribute(name)) {
 			return true;
-		} else
-		if (content.first().hasAttribute(name)) {
+		} else if (content.first() != null &&  content.first().hasAttribute(name)) {
 			return true;
 
-		} else
+		} else  if (content.rest() != null)
 			return content.rest().first().hasAttribute(name);
+		else
+			return false;
 	}
+	
+ 
 		
 	@Override
 	public boolean hasTag(String name) {
 
+		
 		if (tag.name.equals(name)) {
 			return true;
-		} else if (content.first().hasAttribute(name)) {
+		} else if (content.first() != null && content.first().hasTag(name)) {
 			return true;
 
-		} else
-			return content.rest().first().hasAttribute(name);
+		} else if (content.rest() != null)
+			return content.rest().first().hasTag(name);
+		else 
+			return false;
 	}
 
 	@Override
