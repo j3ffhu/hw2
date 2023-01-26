@@ -26,19 +26,18 @@ public class Tagged implements IXML {
 			return content.rest().first().hasAttribute(name);
 	}
 
-	// <a>ab</ab> -> ab
-	// strip off tag, keep plaint text only
-	
 	@Override
 	public String renderAsString() {
 		return content.first().renderAsString() + " " + content.rest().first().renderAsString();
 	}
 
-	// tag name  + content 
-	// how about attribute? 
+	// tag name + atts + content end tag
 	@Override
 	public String renderAsXmlString() {
-		return  "<" + tag.name + "attibutes list" + ">"  
+		return  "<"
+	            + tag.name 
+	            + tag.renderAttsAsString()
+	            + " >"  
 	            + content.first().renderAsXmlString() 
 				+ content.rest().first().renderAsXmlString()
 		        + "</" + tag.name + ">" ;

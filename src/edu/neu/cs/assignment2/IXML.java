@@ -4,10 +4,8 @@ public interface IXML {
 
 	int contentLength();
 
-	// renderAsString
 	String renderAsString();
 
-	// renderAsXmlString
 	String renderAsXmlString();
 
 	boolean hasAttribute(String name);
