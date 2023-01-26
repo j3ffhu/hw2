@@ -1,10 +1,15 @@
 package edu.neu.cs.assignment2;
 
-import java.util.List;
-
 public interface ILoXML {
 
      // a -> b -> ....
-    List<ExamplesXML> getXmlList();
+    // List<ExamplesXML> getXmlList();
+    
+    // first -> next
+    // IXML first;
+    // ILoXML rest;
+	IXML first();
+	ILoXML rest();
+	
     
 }

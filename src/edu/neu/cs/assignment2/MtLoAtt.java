@@ -6,9 +6,14 @@ import java.util.List;
 public class MtLoAtt implements ILoAtt {
 
 	@Override
-	public List<Att> getAttList() {
-		// TODO Auto-generated method stub
+	public Att first() {
 		return null;
 	}
-    
+
+	@Override
+	public ILoAtt rest() {
+		return null;
+	}
+
+ 
 }

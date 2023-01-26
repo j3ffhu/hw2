@@ -5,16 +5,19 @@ import java.util.List;
 
 // nonempty list of att
 public class ConsLoAtt  implements ILoAtt {
-
-    List<Att> loa;
-
-    public ConsLoAtt() {
-        this.loa = new ArrayList<>();
-    }
+	
+	Att first;
+	ILoAtt rest;
 
 	@Override
-	public List<Att> getAttList() {
-		return loa;
+	public Att first() {
+		return first;
 	}
 
+	@Override
+	public ILoAtt rest() {
+		return rest;
+	}
+
+ 
 }

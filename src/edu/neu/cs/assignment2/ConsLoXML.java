@@ -1,24 +1,18 @@
 package edu.neu.cs.assignment2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ConsLoXML implements ILoXML {
 
-    List<ExamplesXML> loxml;
+	IXML first;
+	ILoXML rest;
 	
 	@Override
-	public List<ExamplesXML> getXmlList() {
-		return loxml;
+	public IXML first() {
+		return first;
 	}
-
- 
-
-    public ConsLoXML() {
-        this.loxml = new ArrayList<>();
-    }
-
- 
-
 	
+	@Override
+	public ILoXML rest() {
+		return rest;
+	}
+ 	
 }
