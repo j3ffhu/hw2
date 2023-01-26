@@ -3,7 +3,7 @@ package edu.neu.cs.assignment2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConsLoExamplesXML implements ILoExamplesXML {
+public class ConsLoXML implements ILoXML {
 
     List<ExamplesXML> loxml;
 	
@@ -14,7 +14,7 @@ public class ConsLoExamplesXML implements ILoExamplesXML {
 
  
 
-    public ConsLoExamplesXML() {
+    public ConsLoXML() {
         this.loxml = new ArrayList<>();
     }
 
