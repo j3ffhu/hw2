@@ -27,7 +27,7 @@ public class Untagged implements IXML {
 
 	@Override
 	public String renderAsXmlString() {
-		return content.first().renderAsXmlString() + " " + content.rest().first().renderAsXmlString();
+		return content.first().renderAsXmlString() + content.rest().first().renderAsXmlString();
 	}
 
 }
