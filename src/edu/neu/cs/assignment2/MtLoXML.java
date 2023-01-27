@@ -12,4 +12,9 @@ public class MtLoXML implements ILoXML {
 		return null;
 	}
 
+	@Override
+	public String renderAsXmlString() {
+		return null;
+	}
+
 }

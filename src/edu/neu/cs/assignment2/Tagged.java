@@ -31,22 +31,13 @@ public class Tagged implements IXML {
 			return false;
 	}
 	
- 
-		
 	@Override
 	public boolean hasTag(String name) {
 
-		
-		if (tag.name.equals(name)) {
-			return true;
-		} else if (content.first() != null && content.first().hasTag(name)) {
-			return true;
-
-		} else if (content.rest() != null)
-			return content.rest().first().hasTag(name);
-		else 
-			return false;
+		return 	content.hasTag(name);
 	}
+		
+
 
 	@Override
 	public String renderAsString() {
@@ -56,14 +47,14 @@ public class Tagged implements IXML {
 	// tag name + atts + content end tag
 	@Override
 	public String renderAsXmlString() {
-		return  "<"
-	            + tag.name 
-	            + tag.renderAttsAsString()
-	            + " >"  
-	            + content.first().renderAsXmlString() 
-				+ content.rest().first().renderAsXmlString()
-		        + "</" + tag.name + ">" ;
-		
+				
+			return  "<"
+            + tag.name 
+            + " >"  
+            + content.renderAsXmlString() 
+	        + "</" + tag.name + ">" ;
+ 
+ 
 		
 	}
 

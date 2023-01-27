@@ -28,19 +28,25 @@ public class ExamplesXML {
 		
 		// more complicated to contrust untagged tagged
 		
-		// tagged: one IXML
-		/// <yell volume="30db"><italic>X</italic>ML</yell>
+	
 		
 		
-		// untagged: plaintext + tagged + plaintext
-		/// I am <yell><italic>X</italic>ML</yell>!
+
 		
 		///////////////////////////////////////////////////////////
 		
-		Untagged yell = new  Untagged();
+		// untagged: plaintext + tagged + plaintext
+		
+		/// I am <yell><italic>X</italic>ML</yell>  !
+		//// 
+		
+		// <yell><italic>X</italic>ML</yell>
+		// node2: yell -> italic -> plaintext x
+		// Tagged yell = null;
+		 
 
 		IXML xml21  =  new Plaintext("I am ");
-		IXML xml22  = new Plaintext("!");
+		IXML xml23  = new Plaintext("!");
 		
 		
 		// tagged <yell><italic>X</italic>ML</yell>:  
@@ -51,13 +57,39 @@ public class ExamplesXML {
 		/// @TODO incomplete
 		
       /// construct backward
-		ILoXML  node3 = new ConsLoXML(xml22);
+		ILoXML  node3 = new ConsLoXML(xml23);
 		
-		ILoXML  node2 = new ConsLoXML(yell, node3);
+	//	ILoXML  node2 = new ConsLoXML(yell, node3);
 
+	//	ILoXML  node1 = new ConsLoXML(xml21, node2);
+		
+	//	Untagged xml2 = new Untagged(node1);
+		
+		////////////////////////
+		// tagged: one IXML
+		/// <yell volume="30db"><italic>X</italic>ML</yell>
+		// yell: italic -> plaintext/ML
+		// xml3
+		
+		IXML xml3_ml = new Plaintext("ML");
+		IXML xml3_X = new Plaintext("X");
+		
+		Tag italic = new Tag();
+		italic.name = "italic";
+		
+		Tagged xml3_italic =  new Tagged(italic, new ConsLoXML(xml3_X));
+		ILoXML node_italic =  new ConsLoXML(xml3_italic, new ConsLoXML(xml3_ml)  );
+		
+		// yell: add attibutes next
+		Tag yell = new Tag();
+		italic.name = "yell";
 		
 		
-		
+	  	Tagged node_yell= new Tagged(yell, node_italic);
+ 
+
+		System.out.println("node_yell renderAsXmlString: " + node_yell.renderAsXmlString());
+ 
 	}
 	
 }
