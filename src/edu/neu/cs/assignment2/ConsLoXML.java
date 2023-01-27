@@ -27,23 +27,31 @@ public class ConsLoXML implements ILoXML {
 
 	@Override
 	public String renderAsXmlString() {
-		if (first != null && rest() != null && rest() != null)
-			return first().renderAsXmlString() + rest().renderAsXmlString();
 
-		else if (first() != null)
-			return first().renderAsXmlString();
-		else
-			return "";
+		return first().renderAsXmlString() + rest().renderAsXmlString();
+
 	}
 
 	@Override
-	public Boolean hasTag(String name) {
-		if (first.hasTag(name))
-			return true;
+	public boolean hasTag(String name) {
 
-		else  
-			return rest.hasTag(name);
- 
+		return first.hasTag(name) || rest.hasTag(name);
+
+	}
+
+	@Override
+	public int contentLength() {
+		return first.contentLength() + rest.contentLength();
+	}
+
+	@Override
+	public String renderAsString() {
+		return first.renderAsString() + rest.renderAsString();
+	}
+
+	@Override
+	public boolean hasAttribute(String name) {
+		return first.hasAttribute(name) || first.hasAttribute(name);
 	}
 
 }

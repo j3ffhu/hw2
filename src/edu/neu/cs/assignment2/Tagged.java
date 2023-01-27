@@ -14,21 +14,13 @@ public class Tagged implements IXML {
 	
 	@Override
 	public int contentLength() {
-		return content.first().contentLength() + content.rest().first().contentLength();
+		return content.contentLength();
 	}
 
 	@Override
 	public boolean hasAttribute(String name) {
-
-		if (tag.hasAttribute(name)) {
-			return true;
-		} else if (content.first() != null &&  content.first().hasAttribute(name)) {
-			return true;
-
-		} else  if (content.rest() != null)
-			return content.rest().first().hasAttribute(name);
-		else
-			return false;
+		
+		return content.hasAttribute(name);
 	}
 	
 	@Override
@@ -41,7 +33,7 @@ public class Tagged implements IXML {
 
 	@Override
 	public String renderAsString() {
-		return content.first().renderAsString() + " " + content.rest().first().renderAsString();
+		return content.renderAsString() ;
 	}
 
 	// tag name + atts + content end tag

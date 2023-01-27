@@ -8,7 +8,14 @@ public interface ILoXML {
 	IXML first();
 	ILoXML rest();
 	
-	String renderAsXmlString() ;
-	Boolean hasTag(String name) ;
-    
+	int contentLength();
+
+	String renderAsString();
+
+	String renderAsXmlString();
+
+	boolean hasAttribute(String name);
+	
+	boolean hasTag(String name);
+	
 }

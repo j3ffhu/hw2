@@ -88,7 +88,9 @@ public class ExamplesXML {
 	  	Tagged node_yell= new Tagged(yell, node_italic);
  
 
-		System.out.println("node_yell renderAsXmlString: " + node_yell.renderAsXmlString());
+		// System.out.println("node_yell renderAsXmlString: " + node_yell.renderAsXmlString());
+	  	System.out.println("node_yell renderAsString: " + node_yell.renderAsString());
+	  	 
  
 	}
 	
