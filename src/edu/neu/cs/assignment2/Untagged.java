@@ -8,6 +8,11 @@ public class Untagged implements IXML {
 	public Untagged(  ILoXML content  ) {
 		this.content = content;
 	}
+	
+	public Untagged() {
+	 
+	}
+
 
 	@Override
 	public int contentLength() {

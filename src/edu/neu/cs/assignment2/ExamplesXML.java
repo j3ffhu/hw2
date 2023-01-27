@@ -15,7 +15,8 @@ public class ExamplesXML {
 
 	
 	public static void main(String[] args) {
-		// plaint text 
+		
+		// plaint text: xml1 
 		IXML xml1 = new Plaintext("I am XML!");
 		
 		System.out.println("xml1 contentLength " + xml1.contentLength());
@@ -33,6 +34,8 @@ public class ExamplesXML {
 		
 		// untagged: plaintext + tagged + plaintext
 		/// I am <yell><italic>X</italic>ML</yell>!
+		
+		///////////////////////////////////////////////////////////
 		
 		Untagged yell = new  Untagged();
 
