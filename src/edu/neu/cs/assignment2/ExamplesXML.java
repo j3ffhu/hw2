@@ -82,7 +82,7 @@ public class ExamplesXML {
 		
 		// yell: add attibutes next
 		Tag yell = new Tag();
-		italic.name = "yell";
+		yell.name = "yell";
 		
 		
 	  	Tagged node_yell= new Tagged(yell, node_italic);
@@ -90,6 +90,8 @@ public class ExamplesXML {
 
 		// System.out.println("node_yell renderAsXmlString: " + node_yell.renderAsXmlString());
 	  	System.out.println("node_yell renderAsString: " + node_yell.renderAsString());
+		System.out.println("node_yell has hasTag yell " + node_yell.hasTag("italic"));
+
 	  	 
  
 	}

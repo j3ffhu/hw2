@@ -26,7 +26,7 @@ public class Tagged implements IXML {
 	@Override
 	public boolean hasTag(String name) {
 
-		return 	content.hasTag(name);
+		return 	tag.name.equals(name);
 	}
 		
 
