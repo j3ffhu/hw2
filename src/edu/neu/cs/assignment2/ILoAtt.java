@@ -8,5 +8,9 @@ public interface ILoAtt {
 	Att first();
 
 	ILoAtt rest();
+	
+    String  renderAsString();
+    
+    boolean hasAttribute(String name);
 
 }

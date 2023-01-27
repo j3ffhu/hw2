@@ -26,4 +26,16 @@ public class ConsLoAtt implements ILoAtt {
 		return rest;
 	}
 
+	@Override
+	public String renderAsString() {
+
+		 return first.renderAsString() + rest.renderAsString();
+			 
+	}
+
+	@Override
+	public boolean hasAttribute(String name) {
+		return false;
+	}
+
 }

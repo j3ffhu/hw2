@@ -15,4 +15,16 @@ public class MtLoAtt implements ILoAtt {
 		return null;
 	}
 
+	@Override
+	public String renderAsString() {
+		// TODO Auto-generated method stub
+		return "";
+	}
+
+	@Override
+	public boolean hasAttribute(String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
