@@ -23,7 +23,10 @@ public class ConsLoString implements ILoString {
 	 */
 	@Override
 	public String combine() {
-		return this.first.concat(this.rest.combine());
+		if (first != null)
+		  return this.first.concat(this.rest.combine());
+		else
+			return "";
 	}
 
     // produces a new list, sorted in alphabetical order
@@ -32,7 +35,7 @@ public class ConsLoString implements ILoString {
 	public ILoString sort() {
 		
 		// start with new ConsLoString with first element, keep insert all nodes		
-		ILoString result = new ConsLoString(first, new MtLoString());
+		ILoString result = new ConsLoString(first.toLowerCase(), new MtLoString());
 		
 		
 		// keep insert til end
@@ -48,6 +51,9 @@ public class ConsLoString implements ILoString {
   // produces a sorted list of Strings that has all items in both original lists
 	@Override
 	public ILoString merge(ILoString lost) {
+		
+		if (lost == null)
+			return this;
 		 
 	    // start with this	
 		ILoString result = this.sort();
@@ -79,37 +85,44 @@ public class ConsLoString implements ILoString {
 		return  new ConsLoString(first, rest.append(elemnt));
 	}
 	
-	// pick odd ONLY
-	public ILoString interleaveHelper() {
-		 
-		ILoString result = new ConsLoString(first, new MtLoString());
-		
-		ILoString skip = this.skip();
-		
- 		while (skip != null ) { 
-			result = result.append(skip.first());
-			
-		      skip = skip.skip();
-						 
-		}		
-		return result;		
-	}
+//	// pick odd ONLY
+//	public ILoString interleaveHelper() {
+//		 
+//	  new ConsLoString(first, new MtLoString());
+//		
+//		ILoString skip = this.skip();
+//		
+// 		while (skip != null ) { 
+//			result = result.append(skip.first());
+//			
+//		      skip = skip.skip();
+//						 
+//		}		
+//		return result;		
+//	}
 	
 	
-     // pick odd current, pick even from lost (skp first - use odd
-	// cant user merge - it sorts
+    // pick odd current, pick even from lost (skp first - use odd
+	// PICK ONE EACH until no more left form each list
+	// ODD, first, EVEN second 
 	@Override
 	public ILoString interleave(ILoString lost) {
-		// get odd from this
-		ILoString result = this.interleaveHelper();
 		
-		// now lost: skip first, then skip
-		ILoString skip = lost.rest();
+		// get first from this
+		ILoString result =  new ConsLoString(first, new MtLoString());
 		
- 		while (skip != null ) { 
-			result = result.append(skip.first());
-			
-		      skip = skip.skip();
+		// odd: this
+		ILoString odd = this.skip();
+
+		// even lost
+		ILoString even = lost.rest();
+		
+ 		while (even !=null && odd != null  ) { 
+			 result = result.append(even.first());		 
+			 result = result.append(odd.first());
+			 
+			  odd  = odd.skip();
+			  even = even.skip();
 						 
 		}		
 		return result;		
@@ -128,6 +141,12 @@ public class ConsLoString implements ILoString {
 	// you need find where to insert: first string greater than "that"
 	@Override
 	public ILoString insert(String that) {
+		
+		if (that == null)
+			return this;
+		
+		  that = that.toLowerCase();
+		
 	      if (that.compareTo(this.first) <= 0) {
 	          return new ConsLoString(that, this);
 	      } else {

@@ -58,7 +58,7 @@ public class MtLoString implements ILoString {
     
     // produces a sorted list of Strings that has all items in both original lists
     public ILoString merge(ILoString lost) {
-      return this;
+      return lost.sort();
     }
     
     public ILoString sortMergeHelper(String that) {
