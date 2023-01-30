@@ -24,9 +24,7 @@ public interface ILoString {
 	// returns true if the list is sorted
 	boolean isSorted();
 
-	// helper returns true if the list is sorted alphabetically and case-insensitive
-	boolean isSortedHelper(String that);
-
+ 
 	// produces a list where the first, third, fifth... elements are from this list,
 	// and the second, fourth, sixth... elements are from the given list
 	ILoString interleave(ILoString lost);

@@ -80,12 +80,23 @@ public class Tester {
 	    
 	    System.out.println("marySorted: " +  marySorted);
 	    
-
-
-	    // mary.interleave(this.maryRandom), 
 	    
+	    // interleave
 	    System.out.println("mary.interleave(this.maryRandom): " +  mary.interleave(maryRandom).combine());
 	    System.out.println("mary.interleave(emty): " +  mary.interleave(empty).combine());
+	    
+	    // rest reverse
+	    System.out.println("abc.reverse(): " +  abc.reverse().combine());
+	    
+	    // sorted
+	    System.out.println("abc.isSorted(): " +  abc.isSorted() );
+	    System.out.println("marySorted.isSorted(): "  +  mary.isSorted() );	    
+	    System.out.println("marySorted.sort().isSorted(): "  +  mary.sort().isSorted() );
+	    
+	    // merge
+	    System.out.println("abc de: "  +  abc.merge(de).combine());	    
+	    System.out.println("abc aabb: "  +  abc.merge(aabb).combine());
+	    System.out.println("empty cde: "  +  empty.merge(cde).combine());
 	    
 	    int i = 10;
 	}

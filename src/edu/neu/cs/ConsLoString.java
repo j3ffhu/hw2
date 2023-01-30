@@ -53,19 +53,19 @@ public class ConsLoString implements ILoString {
 	public ILoString merge(ILoString lost) {
 		
 		if (lost == null)
-			return this;
+			return this.sort();
 		 
 	    // start with this	
-		ILoString result = this.sort();
-		
+		ILoString s1 = this.sort();
+ 		
 		ILoString next  = lost;
 		// keep insert til end
 		while (next != null ) { 
-			result = result.insert(next.first());
+			s1 = s1.insert(next.first());
 			next = next.rest();
 		}
 		
-		return result;
+		return s1;
 		
 	}
 	
@@ -85,22 +85,7 @@ public class ConsLoString implements ILoString {
 		return  new ConsLoString(first, rest.append(elemnt));
 	}
 	
-//	// pick odd ONLY
-//	public ILoString interleaveHelper() {
-//		 
-//	  new ConsLoString(first, new MtLoString());
-//		
-//		ILoString skip = this.skip();
-//		
-// 		while (skip != null ) { 
-//			result = result.append(skip.first());
-//			
-//		      skip = skip.skip();
-//						 
-//		}		
-//		return result;		
-//	}
-	
+ 
 	
     // pick odd current, pick even from lost (skp first - use odd
 	// PICK ONE EACH until no more left form each list
@@ -129,13 +114,7 @@ public class ConsLoString implements ILoString {
 		
 	}
 
-
-	
-	
-	
-	
-	
-	
+ 
 
 	  // to insert the given string into this sorted list of strings
 	// you need find where to insert: first string greater than "that"
@@ -154,25 +133,19 @@ public class ConsLoString implements ILoString {
 	      }
 	}
 
-	@Override
-	public boolean isSorted() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public boolean isSortedHelper(String that) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-//	@Override
-//	public ILoString interleave(ILoString lost) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-
+    // returns true if the list is sorted
+	// first less than rest.first, and rest is sorted
+    public boolean isSorted() {
+    
+      if (rest.first() == null)
+    	  return true;
+      else 
+    	  return (first.compareTo(rest.first()) <=0 && rest.isSorted());
+ 
+    }
+ 
+ 
 
 	@Override
 	public ILoString sortMergeHelper(String that) {
@@ -183,7 +156,9 @@ public class ConsLoString implements ILoString {
 	@Override
 	public ILoString reverse() {
 		// TODO Auto-generated method stub
-		return null;
+		// reverse next then append first
+		//
+		return rest.reverse().append(first);
 	}
 
 	@Override
@@ -203,7 +178,7 @@ public class ConsLoString implements ILoString {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+ 
 
 
 //	public ILoString insert(int location, String element) {
